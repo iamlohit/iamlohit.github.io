@@ -113,7 +113,7 @@ History of Networking
                             - Why do we need policy then ?
                                 - To avoid choking the shortest path.
                                 - To make efficient use of multi-paths.
-                                - Eg: PBR, Traffic-Engineering
+                                - Eg: PBR, Traffic-Engineering.
 
                 
 
