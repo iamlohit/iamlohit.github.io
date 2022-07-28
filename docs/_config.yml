@@ -29,7 +29,6 @@ github_username:  iamlohit
 
 # Build settings
 theme: minima
-minima:
   skin: dark
 #remote_theme: jekyll/minima
 plugins:
