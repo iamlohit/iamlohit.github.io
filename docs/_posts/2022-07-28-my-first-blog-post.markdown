@@ -2,7 +2,7 @@
 layout: post
 title:  "Data Plane Summary"
 date:   2022-07-28 11:30:00 +0530
-categories: network data-transport summary
+categories: network-fundamentals
 ---
 
 How to Approach a technology/protocol/product and how to understand them using first principles ?
@@ -23,6 +23,7 @@ History of Networking
                 1.3 What is the best way to calculate shortest path through a network ?
                 1.4 How should packet switch networks interact with QOS ?
                 1.5 Should the control-plane be centralised or decentralised ?
+                1.6 What is network complexity ? Can it be "solved" ?
 
             Considering Solutions:
                 1.1 Should networks be circuit switched or packet switched ?
@@ -79,7 +80,45 @@ History of Networking
                         - Routers are configured to alter queing of traffic with respect to the markings on the packet.
                         - Only takes effect at time of congestion.
                     
+                1.5 Should the control-plane be centralised or decentralised ?
+                Sol. Traditionally:
+                        - Circuit Switched Networks: Centralised Control Plane
+                        - Packet Switches Networks: Distributed Control Plane
+                     Recent Attempts to use Centralised Control-Plane with Packet switched networks:
+                        1. ForCES - Retrired 2015.
+                        2. Open Flow - Began 2006.
+                            Idea: A standard API that allows applications to direcly install entried in FIB of forwarding device,
+                                  rather than in RIB, without code modification to the Data-Plane/Forwardaing Devices (Since they can be multi-vendor)
+                            Reality: - Picked up by Vendors as Features.
+                                     - Many controllers created by Vendors for their own since products.
+                                     - Original idea of Open-Model left to the community.
                 
+                1.6 What is network complexity ? Can it be "solved" ?
+                Sol. Further Fundamental Questions to ask:
+                        - Why so complex ?
+                            - Complexity is nessecary to deal with Uncertainity involved in difficult to solve problems.
+                            - In any complex system, there will exists sets of three-way Tradeoffs Model:
+                                - State: The information carried by the system.
+                                - Optimization: Making somthing faster/efficient.
+                                - Surface: Interaction Surface. The points at which two systems interact.
+                            - If you have not found the tradeoffs, you have not looked hard enough, is a good rule of thumb to follow
+                            in all engineering work.
+
+                        - What is policy ?
+                            - Any configuration that increases the strech of the network.
+                            - Strech is hard to actually measure in the network, since its per source/destination pair.
+                            - Strech of a network is defined as the degree of difference between shortest path and the desired path of packet.
+                            - Shortest path is not always the best path.
+
+                            - Why do we need policy then ?
+                                - To avoid choking the shortest path.
+                                - To make efficient use of multi-paths.
+                                - Eg: PBR, Traffic-Engineering
+
+                
+
+
+
 
                 
 
