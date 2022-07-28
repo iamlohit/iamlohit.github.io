@@ -7,9 +7,9 @@ categories: network-fundamentals
 
 Sticking with First Principles,
 
-Q. How can engineers engage with the complexity involved in Data Transport Systems?
-A. - 1. Understand the basic problems and their various possible solutions.
-     2. Build Models that aid engineers in understanding of transport protocols by:
-        - Classifying Protocols by: Purpose, Information in each Protocol and interaction between protocols.
-        - Help chose which questions to ask to understand a given protcol, what problems all protocols need to solve.
-        - 
+    Q. How can engineers engage with the complexity involved in Data Transport Systems?
+    A. - 1. Understand the basic problems and their various possible solutions.
+        2. Build Models that aid engineers in understanding of transport protocols by:
+            - Classifying Protocols by: Purpose, Information in each Protocol and interaction between protocols.
+            - Help chose which questions to ask to understand a given protcol, what problems all protocols need to solve.
+            - 
