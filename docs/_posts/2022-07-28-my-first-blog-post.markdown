@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "Network Engineering Fundamentals"
 date:   2022-07-28 11:30:00 +0530
 categories: network-fundamentals
