@@ -89,6 +89,34 @@ Starting from First Principles,
                         2. Both speakers use same addressing
                             - Use Anycast.
                             - Used by DNS, Facebook, Geolocation based Content Caching, CDNs like Netflix, AmazonPrimeVideo( Content Delivery Networks)
+                    
+            Q. What is the problem of Flow Control ?
+            A. The ability to be able to say with certainity that the reciever is actually receving and processing the information before the sender transmits more.
+                - Q. What if the 2 hosts are of different size, one speaks fast (10G Link) and other speaks slow(100Mbps Link)?
+                A. If nothing is done, it would cause reciever buffer to overflow and packet being dropped.
+                    - We need a feedback loop. The reciever being able to tell the sender to slow down.
+                    - This means we need some sort of signaling, it can be of two types:
+                        1. Implicit Signaling:
+                            - More widely deployed.
+                            - TCP-wait retransmit timer.
+                            - IRTT + Random Delay
+                            - Basically saying retransmit packet if Ack not recieved.
+                            - Reciever sends nothing.
+                        2. Explicit Signaling:
+                            - Reciever explicitly tells the sender to slow down.
+                            - In case of retransmission, reciever is able to tell the sender exactly what needs retransmission and what was recieved.
+                
+                - Q. How is Flow Control implemented ?
+                A. Windowing + Implicit Signaling
+                    - Most widely deployed Flow-Control mechanism.
+                        1. Single Packet Window:
+                            - Sender sends second packet only after last packet has been acknowledged.
+                            - If not ack'ed and the retransmit timer expires resend the packet.
+                            - Reciever does not send any signal/Ack for the corrupted/out-of-order/dropped packet.(Implicit nature)
+                        2. Multiple Packet Window:
+                            - A finite/Fixed window size.
+                            - No. of packets to send before pausing and waiting for acknowledgement.
+                            - 
                         
             
 
