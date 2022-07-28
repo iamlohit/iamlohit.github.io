@@ -115,8 +115,21 @@ Starting from First Principles,
                             - Reciever does not send any signal/Ack for the corrupted/out-of-order/dropped packet.(Implicit nature)
                         2. Multiple Packet Window:
                             - A finite/Fixed window size.
-                            - No. of packets to send before pausing and waiting for acknowledgement.
-                            - 
+                            - Window = No. of packets to send before pausing and waiting for acknowledgement before sending more.
+                            - Following Types of Explcit Signaling are used:
+                                1. Positive Ack: Only ack for recieved packets.
+                                2. Negative Ack: Only ack for what is not recieved.
+                                3. Selective Ack: Positive + Negative
+                                4. Cumulative Ack: If Ack recieved for packet 10, assume 0-9 must have been recieved.
+                        3. Sliding Window:
+                            - Sender reciever agree on a stack/implementation defined window size and scale it to avoid buffer-overflows on the reciever side causing packets to be dripper.
+                    
+                    Q. What if two identical packets are recieved ?
+                    A. No two packets are identical.
+                        - Each packet has a Sequence No. field set by the sender.
+                        - Reciever keeps record of what Seq. No it has seen so far in the current session.
+                        - Reciever can determine if it sees a repeated Seq. no, in which case it can discard/ignore the packet.
+                    
                         
             
 
