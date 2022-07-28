@@ -28,7 +28,8 @@ linkedin: www.linkedin.com/in/lohitjethwani
 github_username:  iamlohit
 
 # Build settings
-theme: minima
+# theme: minima
+remote_theme: jekyll/minima
 plugins:
   - jekyll-feed
 
