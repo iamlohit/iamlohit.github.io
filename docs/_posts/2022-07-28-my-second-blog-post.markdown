@@ -1,5 +1,5 @@
 ---
-layout: pages
+layout: post
 title:  "Data Transport - Problems & Solutions"
 date:   2022-07-28 13:45:00 +0530
 categories: network-fundamentals
@@ -72,7 +72,24 @@ Starting from First Principles,
                 - Conversation Level Addresing - Session ID representing IP+Port pairs become unique conversations.
 
             Q. Types of communication situations/requirements ?
-            A. One 
+            A.  - 1 to 1 or Unicast. Only 2 speakers.
+                - 1 to all or Broadcast. 1 Speaker multiple recievers.
+                - 1 to many or Multicast. 1 Speaker and selective recievers.
+                    Q. Problem Multicast must solve ?
+                    A. 1. How do you discover discover which device needs a copy of the traffic ?
+                       2. How to you determine which device in the network will replicate the packet ?
+                       3. How will be a loop free path built for this multicast traffic ?
+                    
+                    Q. What if there are multiple speakers who can both deliver Multicast to a group of selective hosts ?
+                    A. Two problems arise with differet solution needed for each:
+                        1. Both speakers use different addressing 
+                            - Use Load Balancer.
+                            - Not the most optimal.
+                            - Introduces complexity.
+                        2. Both speakers use same addressing
+                            - Use Anycast.
+                            - Used by DNS, Facebook, Geolocation based Content Caching, CDNs like Netflix, AmazonPrimeVideo( Content Delivery Networks)
+                        
             
 
 
