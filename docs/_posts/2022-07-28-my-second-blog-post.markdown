@@ -37,7 +37,7 @@ Starting from First Principles,
                 - Type Length Value (Variable Length): TLVs contain Type Code, Length of the Data & Value(the data itself) and can be of various length.
             
             Q. What needs to be kept in mind while designing such a protocol ?
-            A. - Rerource Efficiency:
+            A. - Resource Efficiency:
                 - How much resources are required to encode/decode ?
                 - How much metadata to include with the data itself for smooth operation without increasing too much overhead?
                - Flexibility:
