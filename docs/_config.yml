@@ -30,7 +30,7 @@ linkedin_username: "www.linkedin.com/in/lohitjethwani"
 github_username:  "https://iamlohit.github.io"
 
 # Build settings
-theme: minima
+theme: Architect
 plugins:
   - jekyll-feed
 
