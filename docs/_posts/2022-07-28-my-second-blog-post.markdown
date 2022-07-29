@@ -75,6 +75,7 @@ Starting from First Principles,
             A.  - 1 to 1 or Unicast. Only 2 speakers.
                 - 1 to all or Broadcast. 1 Speaker multiple recievers.
                 - 1 to many or Multicast. 1 Speaker and selective recievers.
+                
                     Q. Problem Multicast must solve ?
                     A. 1. How do you discover discover which device needs a copy of the traffic ?
                        2. How to you determine which device in the network will replicate the packet ?

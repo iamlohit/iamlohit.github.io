@@ -31,6 +31,8 @@ Let's learn a bit about the different mediums and data transport problems and so
             - So a signal sent by one host is received by all hosts.
             - What if all hosts starting speaking at once, can that be handled ?
             - There is no way to restrict listeners.
+            - A network HUB is at the physical layer, its just a wire extender.
+            - Meaning all recieved packets are sent to all hosts.
             - How to allow multiple hosts to talk to each other on a single medium.
             
             Solution 1: CSMA/CD - Carrier Sense Multi-Access/Collision Detection
@@ -42,6 +44,9 @@ Let's learn a bit about the different mediums and data transport problems and so
                             - Once collision is detected, sender sends JAM signal on the wire, so all hosts
                             recieve it and stop sending.
                             - When recievers get the JAM Signal, each host will start a random back-off timer, and wait this time before sending again.
+                            - Meaning, only a single user can send at any time. Loss of bandwidth.
+                            - All recievers will recieve the traffic/signal on the wire.
+                            - This problem is solved by Switches, discussed shortly.
 
             Q. If a medium is a single wire, and all the hosts can hear the sender, then how does a host
             identify which signal is for them, so that they can process it by copying the signal from wire-to-memory ?
@@ -88,5 +93,50 @@ Let's learn a bit about the different mediums and data transport problems and so
                             - Since that might not be sufficent given the growth of IOT (5 million new devices born per DAY).
                             - Hence MAC was extended to 64-bits to EUI-64.
                             - This can support 2 raise to 62 or over a Gazillion unique addresses.
+
+                Q. How can we solve the problem of only a single user being able to transmit at a given time ?
+                A. Let's look at Switched Network Ethernet Operation in comaprison to the Single Wire or HUB Network Operation:
+                    1. HUBs:
+                        - Shared Medium = Single Wire = Single Circuit
+                        - All hosts connected to HUB are essentially connnected to a single wire/circuit.
+                        - Same pair of wires used for sending and recieving, so can only send or recieve at a given time so hald duplex operation.
+                    
+                    2. Switches:
+                        - Each connection from host to switch is a sperate Circuit. Seperate wire.
+                        - This allows Hosts to be able to independently send traffic regardless if other users are also sending traffic since each port/connection is a new/independent circuit or wire.
+                        - Will still need CSMA/CD if using Single pair so can only Send or recieve at a given moment in time. Still half duplex.
+                        - If Two pairs of wire are used, 1 for RX/TX each, so hosts can send and recieve at the same time, meaning Full Duplex Operation, hence no need for CSMA/CD.
+
+                Q. How are errors in trasmission handled ?
+                A. CSMA/CD was desinged to Detect Collisions.
+                    - However, this is not the only type of errors encountered while transporting data through a wire.
+                    - Eg:  Magnetic Interference, Signal Reflection.
+
+                    Basically, how do we ensure data is arriving in the same state it was sent ?
+                    A. - For slower networks (upto 100mbps) - 32-bit CRC
+                       - For higher speed networks (upto 1Gbps) - 8B10B Encoding (Clocking and Bit error correction)
+                       - For even higher speeds (Upto 10Gbps) - ReedSolomon or 16B8B Encoding.
+                        - Implemented in Hardware.
+            
+            Q. How is the Flow Control problem observed and solved at Physical Layer or Layer 1?
+            A. In Full Duplex Switch Operation:
+                    - There is no shared medium and two pairs are used so no need for CSMA/CD.
+                    - Host can send data on the wire as soon as the wire permits.
+                    - This can cause a situation where,
+                        - Host recieves more data that it can process.
+                    A. To resolve this, PAUSE Frames were developed for Ethernet.
+                        - Switch can send(since the reciever sends pause frames) Pause Frames so sender knows to stop sending for a given length of time before resuming.
+
+            
+            Q. What is the maximum data you can send on the wire ?
+            A. The following factors determine how much actual data from the application can be put on the wire:
+                1. The total available Theoretical Bandwidth.
+                2. Flow Control & Channel Efficiency
+                3. Overhead of transport protocol.
+
+               - The first 2, is how we calculate throughput.
+               - All 3 together is what determines the GoodPut or the actual maximum bandwith available for data traffic. 
+
+
                 
             
