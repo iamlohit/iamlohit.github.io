@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Lower Layer Transports"
+title:  "Lower Layer Transports - Ethernet & Physical Media"
 date:   2022-07-29 11:08:00 +0530
 categories: network-fundamentals ethernet
 ---
