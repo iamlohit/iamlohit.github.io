@@ -4,15 +4,11 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Self-taught network & devops engineer with a passion for the industry and involved technologies. Have worked with different aspects of the networking technology and customers of the industry including Enterprise & Service Provider Design and Operations, Vendor side Experience for Cisco Routing, Switching and Security platforms.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Have faced competitive as well as time bound business continuity KPI’s and project deliveries for multi-domain services leased to corporate entities as well as Key Government accounts and
+Cisco Gold Partners including many Fortune 500 companies.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+Connect with me:
 
-
-[jekyll-organization]: https://github.com/jekyll
+Linkedin: https://www.linkedin.com/in/lohitjethwani/
