@@ -8,7 +8,6 @@ paginate     = 10
   name = "Linkedin"
   url = "https://www.linkedin.com/in/lohitjethwani/"
 
-
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
@@ -28,14 +27,30 @@ paginate     = 10
   description = "My new homepage or blog"
   keywords = "homepage, blog"
   images = [""]
+
 [taxonomies]
     category = "blog"
     tag      = "tags"
     series   = "series"
+
+[languages]
+  [languages.en]
+    title = "Hello Friend NG"
+    subtitle = "A simple theme for Hugo"
+    keywords = ""
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+    readOtherPosts = "Read other posts"
+
+    [languages.en.params.logo]
+      logoText = "hello friend ng"
+      logoHomeLink = "/"
+    # or
+    #
+    # path = "/img/your-example-logo.svg"
+    # alt = "Your example logo alt text"
 
   # And you can even create generic menu
   [[menu.main]]
     identifier = "blog"
     name       = "Blog"
     url        = "/posts"
-
