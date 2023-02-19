@@ -1,0 +1,41 @@
+title = 'My New Hugo Site'
+baseurl      = "https://iamlohit.github.io"
+languageCode = "en-us"
+theme        = "hello-friend-ng"
+paginate     = 10
+
+[[params.social]]
+  name = "Linkedin"
+  url = "https://www.linkedin.com/in/lohitjethwani/"
+
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
+
+  # Subtitle for home
+  homeSubtitle = "A simple and beautiful blog"
+
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  disableReadOtherPosts = false
+
+  # Enable sharing buttons, if you like
+  enableSharingButtons = true
+
+  # Metadata mostly used in document's head
+  description = "My new homepage or blog"
+  keywords = "homepage, blog"
+  images = [""]
+[taxonomies]
+    category = "blog"
+    tag      = "tags"
+    series   = "series"
+
+  # And you can even create generic menu
+  [[menu.main]]
+    identifier = "blog"
+    name       = "Blog"
+    url        = "/posts"
+
